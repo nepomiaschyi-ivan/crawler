@@ -1,0 +1,27 @@
+App\Entity\ParsedPageInfo:
+  type: entity
+  table: parsed_pages_info
+  repositoryClass: App\Repository\ParsedPageInfoRepository
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    url:
+      type: string
+      length: 512
+      nullable: false
+    images:
+      type: integer
+      nullable: false
+      options:
+        unsigned: true
+        default: 0
+    executionTime:
+      column: execution_time
+      type: float
+      nullable: false
+      options:
+        unsigned: true
+        default: 0

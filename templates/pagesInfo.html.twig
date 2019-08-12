@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <table border="1">
+        <tr>
+            <th>url</th>
+            <th>images</th>
+            <th>execution time</th>
+        </tr>
+        {% for item in data %}
+            <tr>
+                <td>{{ item.getUrl() }}</td>
+                <td>{{ item.getImages() }}</td>
+                <td>{{ item.getExecutionTime() | number_format(3, '.', ',')  }} sec</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
