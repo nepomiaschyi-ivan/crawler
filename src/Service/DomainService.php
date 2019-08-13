@@ -16,7 +16,7 @@ class DomainService implements DomainServiceInterface
      * @var array
      */
     private $whiteListExtension = [
-        'html'
+        '.html'
     ];
 
     /**
@@ -173,7 +173,7 @@ class DomainService implements DomainServiceInterface
      */
     private function isValidExtension(string $extension): bool
     {
-        return in_array($extension, $this->getWhiteListExtension());
+        return !in_array($extension, $this->getWhiteListExtension());
     }
 
     /**
